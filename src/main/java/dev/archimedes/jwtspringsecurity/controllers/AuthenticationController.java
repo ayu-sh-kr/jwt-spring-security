@@ -53,9 +53,9 @@ public class AuthenticationController {
         return new AuthenticationResponse(jwt);
     }
 
-    @GetMapping("/current-user")
-    public ResponseEntity<String> geUser(Principal principal){
-        log.info(principal.getName());
-        return new ResponseEntity<>("<h1>Hello " + principal.getName() + "</h1>", HttpStatus.ACCEPTED);
-    }
+//    @GetMapping("/current-user")
+//    public ResponseEntity<String> geUser(Principal principal){
+//        log.info(principal.getName());
+//        return new ResponseEntity<>("<h1>Hello " + principal.getName() + "</h1>", HttpStatus.ACCEPTED);
+//    }
 }

@@ -38,7 +38,7 @@ public class WebSecurityConfiguration {
         return http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(builder.pattern("/"), new AntPathRequestMatcher("/h2-console/**")).permitAll()
-                        .requestMatchers(builder.pattern("/register"), builder.pattern("/authentication")).permitAll()
+                        .requestMatchers(builder.pattern("/register"), builder.pattern("/authentication"), builder.pattern("/test/**")).permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(requestFilter, UsernamePasswordAuthenticationFilter.class)
