@@ -32,6 +32,7 @@ public class WebSecurityConfiguration {
         return new BCryptPasswordEncoder();
     }
 
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http, HandlerMappingIntrospector introspector) throws Exception{
         MvcRequestMatcher.Builder builder = new MvcRequestMatcher.Builder(introspector);
